@@ -10,24 +10,12 @@ class Calculate extends Component {
     fontSize: 20,
   };
 
-  // renderTags(){
-  //     if(this.state.tags.length === 0) return <p>There are no tags now</p>;
-  //     return <ul>
-  //     {this.state.tags.map((tag) => (
-  //       <li key={tag}>{tag}</li>
-  //     ))}
-  //   </ul>
-  // }
-
-
-  handleIncrement = (product) => {
-  
-    this.setState({count: this.state.count +5});
-
-  }
+  handleIncrement = () => {
+    this.setState({ count: this.state.count + 1 });
+  };
 
   addIncrement = () => {
-    this.handleIncrement({id: 1})
+    this.handleIncrement();
   };
 
   render() {
@@ -39,7 +27,9 @@ class Calculate extends Component {
         <p style={this.style} className={classes}>
           {this.state.count}
         </p>
-        <button onClick={this.addIncrement} className="btn btn-primary">Add</button>
+        <button onClick={this.addIncrement} className="btn btn-primary">
+          Add
+        </button>
       </div>
     );
   }

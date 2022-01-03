@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css';
-import Calculate from './Component/Calculate';
+import Counters from './Component/Counters';
+
 
 
 
 ReactDOM.render(
     
-<Calculate />
+<Counters />
     
 
 , document.getElementById("root"));
