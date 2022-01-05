@@ -1,17 +1,19 @@
 import React, { Component } from "react";
 
 class Calculate extends Component {
-  state = {
-    count: 1,
-    name: "New Website",
-  };
+  // state = {
+  //   value: this.props.value,
+  //   name: "New Website",
+  // };
   style = {
     color: "red",
     fontSize: 20,
   };
 
+
+
   handleIncrement = () => {
-    this.setState({ count: this.state.count + 1 });
+    this.setState({ value: this.props.value + 1 });
   };
 
   addIncrement = () => {
@@ -20,12 +22,14 @@ class Calculate extends Component {
 
   render() {
     let classes = this.badgeClasses();
-
+    console.log('Check props:', this.props);
     return (
+      
       <div>
-        <p>Calculate {this.state.count}</p>
+        {this.props.children}
+        <p>Calculate {this.props.value}</p>
         <p style={this.style} className={classes}>
-          {this.state.count}
+          {this.props.value}
         </p>
         <button onClick={this.addIncrement} className="btn btn-primary">
           Add
@@ -36,13 +40,13 @@ class Calculate extends Component {
 
   badgeClasses() {
     let classes = "m-2 badge bg-";
-    classes += this.state.count === 0 ? "warning" : "primary";
+    classes += this.props.value === 0 ? "warning" : "primary";
     return classes;
   }
 
   formatCount() {
-    const { count } = this.state;
-    return count === 0 ? "Zero" : count;
+    const { value } = this.state;
+    return value === 0 ? "Zero" : value;
   }
 }
 
