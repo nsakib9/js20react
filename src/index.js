@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css'
-import Counters from './Component/counters';
+import App from './App';
 
 const hello = <h1>Hello calcualte</h1>
 
 ReactDOM.render(
-    <Counters />,
+    <App />,
     document.getElementById('root')
 )
